@@ -1,0 +1,38 @@
+{
+  "name": "lil-nas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install && npm run cp:all",
+    "build:clean": "npm run clean && npm run build",
+    "rm-node_modules": "rimraf node_modules",
+    "rm-public": "rimraf public",
+    "clean": "npm run rm-node_modules && npm run rm-public",
+    "cp:css-bootstrap": "cpx node_modules/bootstrap/dist/**/*.css public/css/bootstrap/",
+    "cp:js-bootstrap": "cpx node_modules/bootstrap/dist/**/*.js public/js/bootstrap/",
+    "cp:css-bootstrap-toggle": "cpx resources/3rdparty/bootstrap-toggle-master/css/**/*.css public/css/3rdparty/toggle-bootstrap",
+    "cp:js-bootstrap-toggle": "cpx resources/3rdparty/bootstrap-toggle-master/js/**/*.js public/js/3rdparty/toggle-bootstrap",
+    "cp:jquery": "cpx node_modules/jquery/dist/jquery.js public/js/jquery",
+    "cp:customStyle": "cpx resources/customStyle/**/*.css public/css/custom",
+    "cp:config": "cpx resources/config/config.js config/",
+    "cp:all": "npm run cp:config && npm run cp:css-bootstrap && npm run cp:js-bootstrap && npm run cp:css-bootstrap-toggle && npm run cp:js-bootstrap-toggle && npm run cp:jquery && npm run cp:customStyle",
+    "start": "npm run build && node index.js",
+    "start:dev": "nodemon ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "cpx": "^1.5.0",
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
+    "jquery": "^3.5.1",
+    "pug": "^3.0.0",
+    "rimraf": "^3.0.2",
+    "simple-ssh": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

@@ -1,0 +1,22 @@
+extends ../Template/template.pug
+
+block css
+
+block content
+    h1 Library (#{movies.length})
+    input(type="checkbox" data-toggle="toggle" value="Dark")
+
+    table(class="table bg-light")
+        thead
+            tr 
+                th(scope='col') #
+                th(scope='col') Title 
+                th(scope='col') Year 
+        tbody
+            - for (let i = 0; i < movies.length ; i++)
+                - let movie = movies[i]
+                - let id = i + 1
+                tr(onclick="")
+                    th(scope='row') #{id}
+                    td #{movie.title}
+                    td #{movie.year}

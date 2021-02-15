@@ -1,0 +1,16 @@
+html 
+    head 
+        title LilNas - #{view}
+        link(rel='stylesheet' href='css/bootstrap/css/bootstrap.css')
+        link(rel='stylesheet' href='css/3rdparty/toggle-bootstrap/bootstrap-toggle.css')
+        link(rel='stylesheet' href='css/custom/style.css')
+        block css
+    body(class="bg-dark")
+        div(class="container-fluid")
+            block content
+    
+    footer 
+        script(src='js/jquery/jquery.js')
+        script(src='js/bootstrap/js/bootstrap.js')
+        script(src='js/3rdparty/toggle-bootstrap/bootstrap-toggle.js')
+        block scripts 
